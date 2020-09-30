@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FoodAway</string>
+    <string name="no_net">no internet connection</string>
+</resources>
