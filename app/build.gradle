@@ -47,7 +47,7 @@ dependencies {
     implementation 'com.github.rommansabbir:NetworkX:1.0'
 
     //sweet sweet dialog
-    compile 'cn.pedant.sweetalert:library:1.3'
+    implementation 'cn.pedant.sweetalert:library:1.3'
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'
