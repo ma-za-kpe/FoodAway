@@ -8,56 +8,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.R
 import kotlinx.android.synthetic.main.fragment_login.*
-import timber.log.Timber
 
-class LoginFragment : Fragment() {
-
+class ForgotFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_forgot, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //hightlihging
-        //build the spannable String for 50 shillings
         val optional = resources.getString(R.string.login_text);
-
         val spannableO = SpannableString(optional);
         spannableO.setSpan(
             ForegroundColorSpan(resources.getColor(R.color.purple_700)),
-            21, 40,
+            49, 65,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
         login_texts.text = spannableO
-
-        //go to signup
-        login_texts.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
-        }
-
-        ui()
-    }
-
-    private fun ui() {
-        // Get input email text
-        val inputemailText = email_address.editText?.text.toString()
-
-        // Get input password text
-        val inputpasswordText = password_toggle.editText?.text.toString()
-
-//        filledTextField.editText?.doOnTextChanged { inputText, _, _, _ ->
-//            // Respond to input text change
-//        }
     }
 
     companion object {
@@ -67,12 +42,12 @@ class LoginFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
+         * @return A new instance of fragment ForgotFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
+            ForgotFragment().apply {
                 arguments = Bundle().apply {
 
                 }
