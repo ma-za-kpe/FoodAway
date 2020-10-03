@@ -12,7 +12,9 @@
         android:roundIcon="@drawable/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodAway">
-        <activity android:name=".ui.activity.WalkThrough">
+        <activity
+            android:theme="@style/Walkthrough.Theme"
+            android:name=".ui.activity.WalkThrough">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
