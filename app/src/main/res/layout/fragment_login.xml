@@ -106,7 +106,7 @@
         android:layout_marginTop="8dp"
         android:elevation="4dp"
         android:text="@string/login"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:cornerRadius="32dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
@@ -123,7 +123,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/log_in" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/log_in_fb"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="0dp"
@@ -131,6 +131,8 @@
         android:layout_marginTop="8dp"
         app:cornerRadius="32dp"
         app:icon="@drawable/facebook"
+        app:iconTint="@null"
+        android:textColor="@color/purple_700"
         app:layout_constraintBottom_toTopOf="@+id/log_in_google"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -140,19 +142,22 @@
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="Facebook" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/log_in_google"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textColor="@color/purple_700"
         app:cornerRadius="32dp"
-        app:icon="@drawable/facebook"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:iconTint="@null"
+        app:icon="@drawable/google"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/log_in_fb"
+        app:strokeColor="@color/purple_500"
         tools:text="Google" />
 
 
