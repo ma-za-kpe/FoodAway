@@ -71,7 +71,7 @@ class WalkThrough : AppIntro() {
     }
 
     private fun goToActivity() {
-        val myIntent = Intent(this, MainActivity::class.java)
+        val myIntent = Intent(this, StartActivity::class.java)
         overridePendingTransition(0, 0)
         this.startActivity(myIntent)
     }
