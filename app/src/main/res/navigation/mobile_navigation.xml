@@ -9,7 +9,7 @@
         tools:layout="@layout/main_fragment"
         android:id="@+id/startFragment"
         android:name="com.kpe.foodaway.ui.fragment.StartFragment"
-        android:label="StartFragment" >
+        android:label="Welcome" >
         <action
             android:id="@+id/action_startFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -20,11 +20,11 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.kpe.foodaway.ui.fragment.LoginFragment"
-        android:label=" login"
+        android:label="Login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.kpe.foodaway.ui.fragment.SignUpFragment"
-        android:label="sign_up"
+        android:label="Sign Up"
         tools:layout="@layout/fragment_sign_up" />
 </navigation>
