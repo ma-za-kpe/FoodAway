@@ -3,4 +3,8 @@
     <string name="no_net">no internet connection</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signup">signup</string>
+    <string name="login">login</string>
+    <string name="lets_get_you_started">Lets Get You Started</string>
+    <string name="image_of_food">image of food</string>
 </resources>
