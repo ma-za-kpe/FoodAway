@@ -12,4 +12,6 @@
     <string name="Password">password</string>
     <string name="forgot_password">Forgot password</string>
     <string name="or">OR</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
 </resources>
