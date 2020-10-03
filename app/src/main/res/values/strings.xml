@@ -7,5 +7,6 @@
     <string name="login">login</string>
     <string name="lets_get_you_started">Lets Get You Started</string>
     <string name="image_of_food">image of food</string>
-    <string name="login_text">Enter your Phone number or \nEmail for sign in, Or Create new account.</string>
+    <string name="login_text">Enter your Email, Or Create new account.</string>
+    <string name="janedoe_email_com">janedoe@email.com</string>
 </resources>

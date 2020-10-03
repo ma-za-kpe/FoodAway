@@ -33,7 +33,7 @@ class StartFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+        // TODO: Use the Vie wModel
 
         login.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_loginFragment)
