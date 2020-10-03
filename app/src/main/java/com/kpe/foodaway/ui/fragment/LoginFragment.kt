@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.R
 import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.main_fragment.*
+import timber.log.Timber
 
 class LoginFragment : Fragment() {
 
@@ -31,12 +31,15 @@ class LoginFragment : Fragment() {
         //build the spannable String for 50 shillings
         val optional = resources.getString(R.string.login_text);
 
+        Timber.d("length "+ optional.length)
+
         val spannableO = SpannableString(optional);
         spannableO.setSpan(
             ForegroundColorSpan(resources.getColor(R.color.purple_700)),
-            49, 68,
+            21, 40,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
+
         login_texts.text = spannableO
 
         //go to signup
