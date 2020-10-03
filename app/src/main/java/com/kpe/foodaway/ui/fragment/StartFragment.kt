@@ -6,8 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.R
+import com.kpe.foodaway.ui.activity.StartActivity
 import com.kpe.foodaway.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class StartFragment : Fragment() {
 
@@ -28,6 +34,14 @@ class StartFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+
+        login.setOnClickListener {
+            findNavController().navigate(R.id.action_startFragment_to_loginFragment)
+        }
+
+        signup.setOnClickListener {
+            findNavController().navigate(R.id.action_startFragment_to_signUpFragment)
+        }
     }
 
 }
