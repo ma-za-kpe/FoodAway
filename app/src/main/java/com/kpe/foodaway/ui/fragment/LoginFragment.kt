@@ -46,7 +46,22 @@ class LoginFragment : Fragment() {
         login_texts.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
+
+        ui()
     }
+
+    private fun ui() {
+        // Get input email text
+        val inputemailText = email_address.editText?.text.toString()
+
+        // Get input password text
+        val inputpasswordText = password_toggle.editText?.text.toString()
+
+//        filledTextField.editText?.doOnTextChanged { inputText, _, _, _ ->
+//            // Respond to input text change
+//        }
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
