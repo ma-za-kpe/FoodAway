@@ -33,15 +33,15 @@ class SignUpFragment : Fragment() {
         val spannableO = SpannableString(optional);
         spannableO.setSpan(
             ForegroundColorSpan(resources.getColor(R.color.purple_700)),
-            59, 75,
+            47, 73,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
         signup_texts.text = spannableO
 
-//        login.setOnClickListener {
-//            findNavController().navigate(R.id.action_startFragment_to_loginFragment)
-//        }
+        signup_texts.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+        }
     }
 
     companion object {
