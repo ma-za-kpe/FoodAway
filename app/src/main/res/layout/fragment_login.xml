@@ -69,11 +69,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_toggle"
-
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/janedoe_email_com"
+        android:hint="@string/Password"
         app:endIconMode="password_toggle"
         app:errorEnabled="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
