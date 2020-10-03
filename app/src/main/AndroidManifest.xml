@@ -13,7 +13,6 @@
         android:theme="@style/Theme.FoodAway"
         tools:replace="icon">
         <activity
-            android:theme="@style/Walkthrough.Theme"
             android:name=".ui.activity.StartActivity">
 
         </activity>
