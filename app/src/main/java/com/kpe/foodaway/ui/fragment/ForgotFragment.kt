@@ -24,7 +24,7 @@ class ForgotFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val optional = resources.getString(R.string.login_text);
+        val optional = resources.getString(R.string.forgott);
         val spannableO = SpannableString(optional);
         spannableO.setSpan(
             ForegroundColorSpan(resources.getColor(R.color.purple_700)),

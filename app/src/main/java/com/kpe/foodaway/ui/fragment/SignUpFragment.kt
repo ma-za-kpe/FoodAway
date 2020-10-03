@@ -1,12 +1,18 @@
 package com.kpe.foodaway.ui.fragment
 
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.R
+import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_login.login_texts
+import kotlinx.android.synthetic.main.fragment_sign_up.*
 import kotlinx.android.synthetic.main.main_fragment.*
 
 
@@ -22,6 +28,16 @@ class SignUpFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        val optional = resources.getString(R.string.signups);
+        val spannableO = SpannableString(optional);
+        spannableO.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.purple_700)),
+            59, 75,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        signup_texts.text = spannableO
 
 //        login.setOnClickListener {
 //            findNavController().navigate(R.id.action_startFragment_to_loginFragment)
