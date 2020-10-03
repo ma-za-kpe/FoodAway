@@ -20,4 +20,7 @@
     <string name="john_doe">John Doe</string>
     <string name="terms"><![CDATA[By Signing up you agree to our Terms Conditions & Privacy Policy.]]></string>
     <string name="_2547189562">7189562</string>
+    <string name="verify_phone_number_text">Verify phone number</string>
+    <string name="enter_the_4_digit_code_sent_to_you_t0_1501333982">Enter the 4-Digit code sent to you t0 +1501333982</string>
+    <string name="didn_t_receive_code">Didn’t receive code? Resend in 0:59</string>
 </resources>
