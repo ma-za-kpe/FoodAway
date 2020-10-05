@@ -26,4 +26,5 @@
     <string name="find_restaurants_near_you">Find restaurants near you</string>
     <string name="please_enter_your_location_or_allow_access_to_your_location_to_find_restaurants_near_you">Please enter your location or allow access to your location to find restaurants near you.</string>
     <string name="use_current_location">Use Current Location</string>
+    <string name="title_client">client_app</string>
 </resources>
