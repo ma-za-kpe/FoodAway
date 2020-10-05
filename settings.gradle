@@ -1,3 +1,4 @@
+include ':vendor'
 include ':client'
 include ':app'
 rootProject.name = "FoodAway"

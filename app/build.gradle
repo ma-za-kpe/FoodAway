@@ -36,7 +36,7 @@ android {
     buildFeatures {
         dataBinding true
     }
-    dynamicFeatures = [':client']
+    dynamicFeatures = [':client', ':vendor']
 }
 
 dependencies {
