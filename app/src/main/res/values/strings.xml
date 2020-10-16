@@ -48,4 +48,10 @@
     <string name="vendor">Become Vendor</string>
     <string name="choose_who_you_want_to_be">Choose A Path.</string>
     <string name="you">You Will Be Able To Change Path Anytime.</string>
+    <string name="title_activity_vendor">VendorActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kpe.foodaway">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
     <application
         android:name=".FoodStuff"
         android:allowBackup="true"
@@ -13,8 +17,23 @@
         android:theme="@style/Theme.FoodAway"
         tools:replace="icon">
         <activity
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:name=".ui.activity.SplashActivity">
+            android:name=".ui.activity.VendorActivity"
+            android:label="@string/title_activity_vendor"></activity>
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,17 +42,16 @@
         </activity>
         <activity
             android:name=".ui.activity.SettingsActivity"
-            android:parentActivityName=".ui.activity.MainActivity">
+            android:parentActivityName=".ui.activity.MainMarketActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.MainActivity" />
+                android:value=".ui.activity.MainMarketActivity" />
         </activity>
         <activity android:name=".ui.activity.StartActivity" />
         <activity
             android:name=".ui.activity.WalkThrough"
-            android:theme="@style/Walkthrough.Theme">
-        </activity>
-        <activity android:name=".ui.activity.MainActivity" />
+            android:theme="@style/Walkthrough.Theme" />
+        <activity android:name=".ui.activity.MainMarketActivity" />
     </application>
 
 </manifest>

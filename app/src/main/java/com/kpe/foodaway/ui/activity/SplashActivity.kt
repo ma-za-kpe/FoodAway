@@ -32,7 +32,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun goToMainActivity() {
-        val myIntent = Intent(this, MainActivity::class.java)
+        val myIntent = Intent(this, MainMarketActivity::class.java)
         this.startActivity(myIntent)
     }
 

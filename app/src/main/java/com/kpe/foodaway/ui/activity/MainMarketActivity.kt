@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.kpe.foodaway.R
 
-class MainActivity : AppCompatActivity() {
+class MainMarketActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
