@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.kpe.foodaway.util.PreferenceManager
 import com.kpe.foodaway.util.ReleaseLogTree
+import com.kpe.foodaway.util.ThemeManager
 import timber.log.Timber
 
 class FoodStuff: Application() {
@@ -27,6 +28,8 @@ class FoodStuff: Application() {
     override fun onCreate() {
         super.onCreate()
 
+        initTheme()
+
         // Setup singleton instance
         instance = this
 
@@ -42,5 +45,10 @@ class FoodStuff: Application() {
             //Release mode
             Timber.plant(ReleaseLogTree())
         }
+    }
+
+    private fun initTheme() {
+        val preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this)
+        ThemeManager.applyTheme(preferences.getString("preference_key_theme", "")!!)
     }
 }
