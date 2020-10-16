@@ -44,7 +44,8 @@
     <string name="dark_theme_value" translatable="false">Dark</string>
     <string name="auto_battery_value" translatable="false">Auto-battery</string>
     <string name="follow_system_value" translatable="false">System</string>
-    <string name="client">Client</string>
-    <string name="vendor">Vendor</string>
-    <string name="choose_who_you_want_to_be">Choose Who You Want To Be.</string>
+    <string name="client">Browse Market</string>
+    <string name="vendor">Become Vendor</string>
+    <string name="choose_who_you_want_to_be">Choose A Path.</string>
+    <string name="you">You Will Be Able To Change Path Anytime.</string>
 </resources>

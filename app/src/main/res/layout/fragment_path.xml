@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/client"
@@ -102,6 +102,24 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/purple_700"
                     android:text="@string/vendor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                   android:textColor="@color/grey_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="@string/you"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
             </LinearLayout>
 
         </LinearLayout>
