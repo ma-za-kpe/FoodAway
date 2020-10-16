@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.kpe.foodaway.ui.activity.R
+import com.kpe.foodaway.R
 
 class VendorFragment : Fragment() {
 
