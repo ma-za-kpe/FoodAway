@@ -48,7 +48,7 @@
     <fragment
         android:id="@+id/pathFragment"
         android:name="com.kpe.foodaway.ui.fragment.PathFragment"
-        android:label="fragment_path"
+        android:label=""
         tools:layout="@layout/fragment_path" >
         <action
             android:id="@+id/action_pathFragment_to_startFragment"
