@@ -35,8 +35,9 @@ class WalkThrough : AppIntro() {
         addSlide(
             AppIntroFragment.newInstance(
                 title = "All your favorites",
-                description = "Order from the best local restaurants with easy, on-demand delivery.",
-                imageDrawable = R.drawable.one,
+                description = "Browse & Order All Products \n" +
+                        "at Any Time",
+                imageDrawable = R.drawable.logo,
                 titleColor = Color.WHITE,
                 backgroundColor = resources.getColor(R.color.purple_700)
 
@@ -45,8 +46,10 @@ class WalkThrough : AppIntro() {
         addSlide(
             AppIntroFragment.newInstance(
                 title = "Free delivery offers",
-                description = "Free delivery for new customers via Apple Pay and others payment methods.",
-                imageDrawable = R.drawable.two,
+                description = "\n" +
+                        "Browse & Order All Products \n" +
+                        "at Any Time",
+                imageDrawable = R.drawable.delivery,
                 titleColor = Color.WHITE,
                 backgroundColor = resources.getColor(R.color.purple_700)
             )
@@ -54,13 +57,47 @@ class WalkThrough : AppIntro() {
 
         addSlide(
             AppIntroFragment.newInstance(
-                title = "Choose your food",
-                description = "Easily find your type of food craving and you’ll get delivery in wide range.",
-                imageDrawable = R.drawable.three,
+                title = "Safe Delivery",
+                description = "You Package in\n" +
+                        "Our Safe Hands",
+                imageDrawable = R.drawable.safehands,
                 titleColor = Color.WHITE,
                 backgroundColor = resources.getColor(R.color.purple_700)
             )
         )
+
+        addSlide(
+            AppIntroFragment.newInstance(
+                title = "On Time Delivery ",
+                description = "Committed Delivery on Time",
+                imageDrawable = R.drawable.ontime,
+                titleColor = Color.WHITE,
+                backgroundColor = resources.getColor(R.color.purple_700)
+            )
+        )
+
+        addSlide(
+            AppIntroFragment.newInstance(
+                title = "Speedy & Timely ",
+                description = "24/7\n" +
+                        "    Fastest & Safest Delivery",
+                imageDrawable = R.drawable.twentyfourseven,
+                titleColor = Color.WHITE,
+                backgroundColor = resources.getColor(R.color.purple_700)
+            )
+        )
+
+        addSlide(
+            AppIntroFragment.newInstance(
+                title = "Realtime Tracking",
+                description = "Track Your Delivery in\n" +
+                        "Real Time",
+                imageDrawable = R.drawable.realtime,
+                titleColor = Color.WHITE,
+                backgroundColor = resources.getColor(R.color.purple_700)
+            )
+        )
+
     }
 
     override fun onSkipPressed(currentFragment: Fragment?) {
