@@ -46,7 +46,7 @@
         tools:text="Forgot password" />
 
     <TextView
-        android:id="@+id/login_texts"
+        android:id="@+id/login_texts_forgot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
