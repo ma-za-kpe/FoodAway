@@ -8,10 +8,14 @@ import androidx.fragment.app.Fragment
 import com.github.appintro.AppIntro
 import com.github.appintro.AppIntroFragment
 import com.github.appintro.AppIntroPageTransformerType
+import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
 import com.kpe.foodaway.base.BaseActivity
 
 class WalkThrough : AppIntro() {
+
+    val prefManager = FoodStuff.instance!!.preferenceManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -103,7 +107,7 @@ class WalkThrough : AppIntro() {
     override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
         // Decide what to do when the user clicks on "Skip"
-//        prefManager.isFirstTimeLaunch = false
+        prefManager.isFirstTimeLaunch = false
         goToActivity()
     }
 
@@ -111,12 +115,13 @@ class WalkThrough : AppIntro() {
         val myIntent = Intent(this, StartActivity::class.java)
         overridePendingTransition(0, 0)
         this.startActivity(myIntent)
+        finish()
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
         // Decide what to do when the user clicks on "Done"
-//        prefManager.isFirstTimeLaunch = false
+        prefManager.isFirstTimeLaunch = false
         goToActivity()
     }
 

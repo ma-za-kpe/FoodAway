@@ -7,11 +7,15 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
 import kotlinx.android.synthetic.main.fragment_path.*
 
 
 class PathFragment : Fragment() {
+
+    val prefManager = FoodStuff.instance!!.preferenceManager
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +38,12 @@ class PathFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         vendor.setOnClickListener {
-            findNavController().navigate(R.id.action_pathFragment_to_vendorActivity2)
+            prefManager.isVendor = true
+            findNavController().navigate(R.id.action_pathFragment_to_startFragment)
         }
 
         client.setOnClickListener {
+            prefManager.isClient = true
             findNavController().navigate(R.id.action_pathFragment_to_mainActivity)
         }
 

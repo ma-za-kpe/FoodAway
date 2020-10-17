@@ -1,21 +1,26 @@
 package com.kpe.foodaway.ui.fragment
 
+import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
+import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
 import com.kpe.foodaway.ui.activity.StartActivity
 import com.kpe.foodaway.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class StartFragment : Fragment() {
+
+    val prefManager = FoodStuff.instance!!.preferenceManager
 
     companion object {
         fun newInstance() = StartFragment()
@@ -34,6 +39,13 @@ class StartFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the Vie wModel
+
+        // change primary colors universally is vendor or client
+        if (prefManager.isClient){
+            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
+        } else if (prefManager.isVendor){
+            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
+        }
 
         login.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_loginFragment)

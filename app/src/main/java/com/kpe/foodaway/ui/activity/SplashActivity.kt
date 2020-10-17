@@ -10,7 +10,6 @@ import com.kpe.foodaway.R
 class SplashActivity : AppCompatActivity() {
     val SPLASH_DISPLAY_LENGTH = 3000
 
-
     val prefManager = FoodStuff.instance!!.preferenceManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,20 +20,32 @@ class SplashActivity : AppCompatActivity() {
             if (prefManager.isFirstTimeLaunch) {
                 gotoWalkThrough()
             } else {
-                goToMainActivity()
+                if (prefManager.isClient){
+                    goToMainActivity()
+                } else if (prefManager.isVendor){
+                    goToVendorActivity()
+                }
+
             }
         }, 5000)
+    }
+
+    private fun goToVendorActivity() {
+        val myIntent = Intent(this, VendorActivity::class.java)
+        this.startActivity(myIntent)
+        finish()
     }
 
     private fun gotoWalkThrough() {
         val myIntent = Intent(this, WalkThrough::class.java)
         this.startActivity(myIntent)
+        finish()
     }
 
     private fun goToMainActivity() {
         val myIntent = Intent(this, MainMarketActivity::class.java)
         this.startActivity(myIntent)
+        finish()
     }
-
 
 }
