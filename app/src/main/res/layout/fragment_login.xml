@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".ui.fragment.LoginFragment">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -61,7 +70,6 @@
         android:id="@+id/tile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/lets_sign_you_in"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/purple_700"
@@ -127,17 +135,16 @@
         android:id="@+id/forgot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textColor="@color/purple_700"
         android:text="@string/forgot_password"
+        android:textColor="@color/purple_700"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/password_toggle" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/login_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -153,23 +160,22 @@
         android:id="@+id/or"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/or"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintTop_toBottomOf="@+id/login_login" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/log_in_fb"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:text="@string/facebook"
+        android:textColor="@color/purple_700"
         app:cornerRadius="32dp"
         app:icon="@drawable/facebook"
         app:iconTint="@null"
-        android:textColor="@color/purple_700"
         app:layout_constraintBottom_toTopOf="@+id/log_in_google"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -178,7 +184,6 @@
         app:layout_constraintVertical_bias="0.16000003"
         app:layout_constraintVertical_chainStyle="packed"
         app:strokeColor="@color/purple_500"
-        android:text="@string/facebook"
         tools:text="Facebook" />
 
     <com.google.android.material.button.MaterialButton
@@ -186,18 +191,17 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:text="@string/google"
         android:textColor="@color/purple_700"
         app:cornerRadius="32dp"
-        app:iconTint="@null"
         app:icon="@drawable/google"
+        app:iconTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/log_in_fb"
         app:strokeColor="@color/purple_500"
-        android:text="@string/google"
         tools:text="Google" />
 
     <TextView
@@ -212,4 +216,7 @@
         app:layout_constraintTop_toBottomOf="@+id/log_in_google"
         tools:text="Dont Have An Account? Sign Up." />
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
