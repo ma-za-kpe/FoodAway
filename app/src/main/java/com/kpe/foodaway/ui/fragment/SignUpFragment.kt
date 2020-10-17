@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.R
 import kotlinx.android.synthetic.main.fragment_sign_up.*
@@ -39,6 +40,16 @@ class SignUpFragment : Fragment() {
         signup_texts.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
     }
 
     companion object {
