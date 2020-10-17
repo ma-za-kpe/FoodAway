@@ -43,8 +43,7 @@ class StartFragment : Fragment() {
         // change primary colors universally is vendor or client
         if (prefManager.isClient){
             (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
-                ColorDrawable(resources.getColor(R.color.purple_500))
-            )
+                ColorDrawable(resources.getColor(R.color.purple_500)))
             login_start.setBackgroundColor(resources.getColor(R.color.purple_500))
             signup_start.setBackgroundColor(resources.getColor(R.color.purple_500))
         } else if (prefManager.isVendor){
