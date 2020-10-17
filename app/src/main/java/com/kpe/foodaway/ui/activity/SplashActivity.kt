@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
                 }
 
             }
-        }, 5000)
+        }, 3000)
     }
 
     private fun goToVendorActivity() {
