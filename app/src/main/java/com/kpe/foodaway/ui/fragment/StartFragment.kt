@@ -1,22 +1,21 @@
 package com.kpe.foodaway.ui.fragment
 
 import android.graphics.drawable.ColorDrawable
-import androidx.lifecycle.ViewModelProvider
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
-import com.kpe.foodaway.ui.activity.StartActivity
 import com.kpe.foodaway.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
+
 
 class StartFragment : Fragment() {
 
@@ -28,6 +27,7 @@ class StartFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,16 +42,23 @@ class StartFragment : Fragment() {
 
         // change primary colors universally is vendor or client
         if (prefManager.isClient){
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
+            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
+                ColorDrawable(resources.getColor(R.color.purple_500))
+            )
+            login_start.setBackgroundColor(resources.getColor(R.color.purple_500))
+            signup_start.setBackgroundColor(resources.getColor(R.color.purple_500))
         } else if (prefManager.isVendor){
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
+            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
+                ColorDrawable(resources.getColor(R.color.purple_700)))
+            login_start.setBackgroundColor(resources.getColor(R.color.purple_700))
+            signup_start.setBackgroundColor(resources.getColor(R.color.purple_700))
         }
 
-        login.setOnClickListener {
+        login_start.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_loginFragment)
         }
 
-        signup.setOnClickListener {
+        signup_start.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_signUpFragment)
         }
     }
