@@ -44,21 +44,21 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (prefManager.isClient){
-            //change color if vendor
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
-            login.setBackgroundColor(resources.getColor(R.color.purple_500))
-            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
-            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
-            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_500))
-        } else if (prefManager.isVendor){
-            //change color if vendor
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
-            login.setBackgroundColor(resources.getColor(R.color.purple_700))
-            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
-            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
-            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_700))
-        }
+//        if (prefManager.isClient){
+//            //change color if vendor
+//            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
+//            login.setBackgroundColor(resources.getColor(R.color.purple_500))
+//            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
+//            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
+//            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_500))
+//        } else if (prefManager.isVendor){
+//            //change color if vendor
+//            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
+//            login.setBackgroundColor(resources.getColor(R.color.purple_700))
+//            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
+//            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
+//            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_700))
+//        }
 
         //hightlihging
         //build the spannable String for 50 shillings
