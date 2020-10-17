@@ -25,6 +25,23 @@ class StartFragment : Fragment() {
         fun newInstance() = StartFragment()
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // change primary colors universally is vendor or client
+        if (prefManager.isClient){
+            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
+                ColorDrawable(resources.getColor(R.color.purple_500)))
+            login_start.setBackgroundColor(resources.getColor(R.color.purple_500))
+            signup_start.setBackgroundColor(resources.getColor(R.color.purple_500))
+        } else if (prefManager.isVendor){
+            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
+                ColorDrawable(resources.getColor(R.color.purple_700)))
+            login_start.setBackgroundColor(resources.getColor(R.color.purple_700))
+            signup_start.setBackgroundColor(resources.getColor(R.color.purple_700))
+        }
+    }
+
     private lateinit var viewModel: MainViewModel
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -39,19 +56,6 @@ class StartFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the Vie wModel
-
-        // change primary colors universally is vendor or client
-        if (prefManager.isClient){
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
-                ColorDrawable(resources.getColor(R.color.purple_500)))
-            login_start.setBackgroundColor(resources.getColor(R.color.purple_500))
-            signup_start.setBackgroundColor(resources.getColor(R.color.purple_500))
-        } else if (prefManager.isVendor){
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(
-                ColorDrawable(resources.getColor(R.color.purple_700)))
-            login_start.setBackgroundColor(resources.getColor(R.color.purple_700))
-            signup_start.setBackgroundColor(resources.getColor(R.color.purple_700))
-        }
 
         login_start.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_loginFragment)
