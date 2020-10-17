@@ -14,7 +14,7 @@
     <string name="or">OR</string>
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
-    <string name="signups">Enter your Name, Email and Password for sign up. Already have an account?</string>
+    <string name="signups">Already have an account? Sign In</string>
     <string name="forgot_help">We have sent a instructions email to your email. Having problems?</string>
     <string name="forgott">Enter your email address and we will send you a reset instructions.</string>
     <string name="john_doe">John Doe</string>
@@ -56,4 +56,5 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="lets_sign_you_in">Lets Sign You In</string>
     <string name="welcome_back_you_ve_been_missed">Welcome back, you’ve been missed!</string>
+    <string name="create_an_account_to_continued">Create an account to continued</string>
 </resources>

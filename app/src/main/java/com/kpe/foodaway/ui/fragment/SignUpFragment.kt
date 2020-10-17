@@ -30,7 +30,7 @@ class SignUpFragment : Fragment() {
         val spannableO = SpannableString(optional);
         spannableO.setSpan(
             ForegroundColorSpan(resources.getColor(R.color.purple_700)),
-            47, 73,
+            25, 32,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
