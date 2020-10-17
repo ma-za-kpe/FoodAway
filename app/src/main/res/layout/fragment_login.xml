@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.LoginFragment">
@@ -34,17 +35,52 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="16dp" />
 
-    <TextView
-        android:id="@+id/login_texts"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bluebackground"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/login_text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_height="100dp"
+        android:background="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/loginlogo"
+        app:layout_constraintBottom_toBottomOf="@+id/bluebackground"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        tools:text="Enter your Phone number or Email for sign in, Or " />
+        app:layout_constraintTop_toBottomOf="@+id/bluebackground" />
+
+    <TextView
+        android:id="@+id/tile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/lets_sign_you_in"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_back_you_ve_been_missed"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/tile"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tile"
+        app:layout_constraintTop_toBottomOf="@+id/tile" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_address"
@@ -57,7 +93,7 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/login_texts"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -93,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:textColor="@color/purple_700"
         android:text="@string/forgot_password"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.498"
@@ -100,7 +137,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password_toggle" />
 
     <Button
-        android:id="@+id/sign_up"
+        android:id="@+id/login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -121,7 +158,7 @@
         android:text="@string/or"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up" />
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/log_in_fb"
@@ -162,6 +199,5 @@
         app:strokeColor="@color/purple_500"
         android:text="@string/google"
         tools:text="Google" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -107,7 +107,7 @@ class WalkThrough : AppIntro() {
     override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
         // Decide what to do when the user clicks on "Skip"
-        prefManager.isFirstTimeLaunch = false
+//        prefManager.isFirstTimeLaunch = false
         goToActivity()
     }
 
@@ -121,7 +121,7 @@ class WalkThrough : AppIntro() {
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
         // Decide what to do when the user clicks on "Done"
-        prefManager.isFirstTimeLaunch = false
+//        prefManager.isFirstTimeLaunch = false
         goToActivity()
     }
 
