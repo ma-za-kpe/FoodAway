@@ -33,10 +33,27 @@ class PreferenceManager(val context: Context) {
         editor = pref.edit()
     }
 
+    //check if user is logging in for the first time
     var isFirstTimeLaunch: Boolean
         get() = pref.getBoolean(Constants.IS_FIRST_TIME_LAUNCH, true)
         set(isFirstTime) {
             editor.putBoolean(Constants.IS_FIRST_TIME_LAUNCH, isFirstTime)
+            editor.apply()
+        }
+
+    //check if user has chosen vendor
+    var isVendor: Boolean
+        get() = pref.getBoolean(Constants.IS_VENDOR, false)
+        set(isVendorPath) {
+            editor.putBoolean(Constants.IS_VENDOR, isVendorPath)
+            editor.apply()
+        }
+
+    //check if user has chosen client
+    var isClient: Boolean
+        get() = pref.getBoolean(Constants.IS_CLIENT, false)
+        set(isClientPath) {
+            editor.putBoolean(Constants.IS_CLIENT, isClientPath)
             editor.apply()
         }
 

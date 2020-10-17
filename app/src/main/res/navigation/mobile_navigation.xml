@@ -51,11 +51,11 @@
         android:label=""
         tools:layout="@layout/fragment_path" >
         <action
+            android:id="@+id/action_pathFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
             android:id="@+id/action_pathFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
-        <action
-            android:id="@+id/action_pathFragment_to_vendorActivity2"
-            app:destination="@id/vendorActivity2" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
