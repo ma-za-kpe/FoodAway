@@ -10,18 +10,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
-import kotlinx.android.synthetic.main.fragment_forgot.*
+import com.kpe.foodaway.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.email_address
-import timber.log.Timber
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment() {
 
     val prefManager = FoodStuff.instance!!.preferenceManager
+    private lateinit var textview : TextView
+    private val start: Int? = null
+    private val end: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,18 +58,6 @@ class LoginFragment : Fragment() {
             bluebackground.setBackgroundColor(resources.getColor(R.color.purple_700))
         }
 
-        //hightlihging
-        //build the spannable String for 50 shillings
-        val optional = resources.getString(R.string.login_text);
-
-        val spannableO = SpannableString(optional);
-        spannableO.setSpan(
-            ForegroundColorSpan(resources.getColor(R.color.purple_700)),
-            22, 30,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-
-        login_texts_orsingup.text = spannableO
 
         //go to signup
         login_texts_orsingup.setOnClickListener {
@@ -74,7 +65,14 @@ class LoginFragment : Fragment() {
         }
 
         ui()
+
+        //hightlihging
+        //build the spannable String for 50 shillings
+        val optional = resources.getString(R.string.login_text);
+        hightlightText(optional, 22, 30, login_texts_orsingup, resources.getColor(R.color.purple_700))
     }
+
+    //22 30
 
     private fun ui() {
         // Get input email text

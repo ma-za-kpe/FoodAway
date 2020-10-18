@@ -5,8 +5,12 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresApi
@@ -71,6 +75,24 @@ open class BaseActivity : AppCompatActivity() {
     fun close(v: View) {
         Timber.i("$v")
         onBackPressed()
+    }
+
+    fun hightlightText(
+        optional: String,
+        start: Int,
+        end: Int,
+        textview: TextView,
+        color: Int
+    ) {
+
+        val spannableO = SpannableString(optional);
+        spannableO.setSpan(
+            ForegroundColorSpan(color),
+            start, end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        textview.text = spannableO
     }
 
     //region Dialogues

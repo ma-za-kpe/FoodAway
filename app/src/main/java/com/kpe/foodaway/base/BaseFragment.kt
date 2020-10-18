@@ -5,8 +5,12 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
@@ -14,19 +18,41 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.kpe.foodaway.R
 import com.rommansabbir.networkx.NetworkX
 import timber.log.Timber
 
 open class BaseFragment : Fragment() {
 
+    private lateinit var textview : TextView
+    private val start: Int? = null
+    private val end: Int? = null
+
+
+
     var isConnected: Boolean = false
-
-
-
     private var alertDialog: SweetAlertDialog? = null
 
     //globally provides same view model instance
 //    val vm by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
+
+     fun hightlightText(
+        optional: String,
+        start: Int,
+        end: Int,
+        textview: TextView,
+        color: Int
+    ) {
+
+        val spannableO = SpannableString(optional);
+        spannableO.setSpan(
+            ForegroundColorSpan(color),
+            start, end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        textview.text = spannableO
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

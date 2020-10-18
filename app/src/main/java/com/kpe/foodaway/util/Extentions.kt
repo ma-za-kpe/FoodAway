@@ -3,9 +3,17 @@ package com.kpe.foodaway.util
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.view.View
+import android.widget.TextView
+import com.google.gson.Gson
+import com.kpe.foodaway.R
+import kotlinx.android.synthetic.main.fragment_login.*
 
+// https://stackoverflow.com/a/45952201
 /**
  * Extensions for simpler launching of Activities
  */
@@ -17,11 +25,7 @@ inline fun <reified T : Any> Activity.launchActivity(
 
     val intent = newIntent<T>(this)
     intent.init()
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-        startActivityForResult(intent, requestCode, options)
-    } else {
-        startActivityForResult(intent, requestCode)
-    }
+    startActivityForResult(intent, requestCode, options)
 }
 
 inline fun <reified T : Any> Context.launchActivity(
@@ -33,5 +37,6 @@ inline fun <reified T : Any> Context.launchActivity(
     startActivity(intent, options)
 }
 
-inline fun <reified T : Any> newIntent(context: Context): Intent =
-    Intent(context, T::class.java)
+inline fun <reified T : Any> newIntent(context: Context): Intent = Intent(context, T::class.java)
+
+
