@@ -3,7 +3,7 @@ package com.kpe.foodaway.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kpe.foodaway.R
-import com.kpe.foodaway.ui.activity.ui.main.VendorFragment
+import com.kpe.foodaway.ui.fragment.VendorFragment
 
 class VendorActivity : AppCompatActivity() {
 

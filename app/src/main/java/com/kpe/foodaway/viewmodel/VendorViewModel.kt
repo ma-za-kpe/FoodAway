@@ -1,4 +1,4 @@
-package com.kpe.foodaway.ui.activity.ui.main
+package com.kpe.foodaway.viewmodel
 
 import androidx.lifecycle.ViewModel
 

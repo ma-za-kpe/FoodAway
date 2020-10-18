@@ -5,4 +5,5 @@ object Constants {
     const val IS_FIRST_TIME_LAUNCH = "IS_FIRST_TIME_LAUNCH"
     const val IS_VENDOR = "IS_VENDOR"
     const val IS_CLIENT = "IS_CLIENT"
+    const val SPLASH_DISPLAY_LENGTH = 3000
 }

@@ -1,4 +1,4 @@
-package com.kpe.foodaway.ui.activity.ui.main
+package com.kpe.foodaway.ui.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kpe.foodaway.R
+import com.kpe.foodaway.viewmodel.VendorViewModel
 
 class VendorFragment : Fragment() {
 
