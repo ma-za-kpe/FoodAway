@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
 import com.kpe.foodaway.base.BaseFragment
+import com.kpe.foodaway.base.toast
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.email_address
 
@@ -40,6 +41,7 @@ class LoginFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (prefManager.isClient){
+            toast("VENDORRR")
             //change color if vendor
             (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
             login_login.setBackgroundColor(resources.getColor(R.color.purple_500))
@@ -47,6 +49,7 @@ class LoginFragment : BaseFragment() {
             log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
             bluebackground.setBackgroundColor(resources.getColor(R.color.purple_500))
         } else if (prefManager.isVendor){
+            toast("CLIENTTTT")
             //change color if vendor
             (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
             login_login.setBackgroundColor(resources.getColor(R.color.purple_700))
