@@ -60,9 +60,6 @@ dependencies {
     //timber for logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    //NetworkX
-    implementation 'com.github.rommansabbir:NetworkX:1.0'
-
     //sweet sweet dialog
     implementation 'cn.pedant.sweetalert:library:1.3'
 

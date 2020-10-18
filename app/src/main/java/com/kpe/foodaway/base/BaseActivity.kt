@@ -18,14 +18,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ViewModelProvider
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.kpe.foodaway.FoodStuff
-import com.kpe.foodaway.R
-import com.kpe.foodaway.viewmodel.MainViewModel
-import com.rommansabbir.networkx.NetworkX
 import timber.log.Timber
-import kotlin.reflect.KProperty
 
 open class BaseActivity : AppCompatActivity() {
 
@@ -43,22 +38,6 @@ open class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        changeStatusBarColor("#FFFFFF")
-
-        NetworkX.isConnectedLiveData().observe(this, {
-            isConnected = it
-            Timber.d("Base net state=> $it")
-            if (it) {
-                //Do your stuff here when internet is connected
-
-            } else {
-                // Do your stuff here when internet is not connected
-//                alert(
-//                    this, getString(R.string.no_net),
-//                    bcgColor = R.color.btn_bg_pressed_color_error
-//                )
-//                createSnack(this, txt =  getString(R.string.no_net))
-            }
-        })
     }
 
     override fun isFinishing(): Boolean {
@@ -240,9 +219,7 @@ open class BaseActivity : AppCompatActivity() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = Color.parseColor(color)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
     }
 
 }

@@ -22,9 +22,6 @@ import kotlinx.android.synthetic.main.fragment_login.email_address
 class LoginFragment : BaseFragment() {
 
     val prefManager = FoodStuff.instance!!.preferenceManager
-    private lateinit var textview : TextView
-    private val start: Int? = null
-    private val end: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,38 +61,12 @@ class LoginFragment : BaseFragment() {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
-        ui()
-
         //hightlihging
-        //build the spannable String for 50 shillings
         val optional = resources.getString(R.string.login_text);
         hightlightText(optional, 22, 30, login_texts_orsingup, resources.getColor(R.color.purple_700))
     }
 
-    //22 30
-
-    private fun ui() {
-        // Get input email text
-        val inputemailText = email_address.editText?.text.toString()
-
-        // Get input password text
-        val inputpasswordText = password_toggle.editText?.text.toString()
-
-//        filledTextField.editText?.doOnTextChanged { inputText, _, _, _ ->
-//            // Respond to input text change
-//        }
-    }
-
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             LoginFragment().apply {

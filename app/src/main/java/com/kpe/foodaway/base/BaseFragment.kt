@@ -18,19 +18,10 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.kpe.foodaway.R
-import com.rommansabbir.networkx.NetworkX
 import timber.log.Timber
 
 open class BaseFragment : Fragment() {
 
-    private lateinit var textview : TextView
-    private val start: Int? = null
-    private val end: Int? = null
-
-
-
-    var isConnected: Boolean = false
     private var alertDialog: SweetAlertDialog? = null
 
     //globally provides same view model instance
@@ -56,18 +47,6 @@ open class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        NetworkX.isConnectedLiveData().observe(viewLifecycleOwner, {
-            isConnected = it
-            Timber.d("Base net state=> $it")
-            if (it) {
-                //Do your stuff here when internet is connected
-
-            } else {
-                // Do your stuff here when internet is not connected
-                //createSnack(requireActivity(), txt =  getString(R.string.no_net))
-            }
-        })
     }
 
     override fun onStop() {
