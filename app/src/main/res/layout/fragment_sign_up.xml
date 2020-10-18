@@ -60,20 +60,15 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/tile" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
-        app:cardCornerRadius="24dp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/nested_scrollview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:id="@+id/card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/signup_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -298,8 +293,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
-
-    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
