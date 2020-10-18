@@ -1,13 +1,11 @@
 package com.kpe.foodaway.ui.fragment
 
-import android.R.attr.name
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.kpe.foodaway.R
 import com.kpe.foodaway.base.BaseFragment
 import ernestoyaquello.com.verticalstepperform.VerticalStepperFormLayout
@@ -70,14 +68,14 @@ class StepperFragment : BaseFragment(), VerticalStepperForm {
         // Here we generate programmatically the view that will be added by the system to the step content layout
         tax.isSingleLine = true
         tax.hint = "Your tax info"
-        return tax;
+        return tax
     }
 
     private fun createPhysicalAddressStep(): View? {
         // Here we generate programmatically the view that will be added by the system to the step content layout
         address.isSingleLine = true
         address.hint = "Your address info"
-        return address;
+        return address
     }
 
     private fun createLinsenceToSellStep(): View? {
@@ -135,16 +133,15 @@ class StepperFragment : BaseFragment(), VerticalStepperForm {
     }
 
     override fun sendData() {
-        Timber.d("data collected tax " + tax.text)
-        Timber.d("data collected address " + address.text)
-        Timber.d("data collected license " + license.text)
+        Timber.d("data collected tax %s", tax.text)
+        Timber.d("data collected address %s", address.text)
+        Timber.d("data collected license %s", license.text)
     }
 
     companion object {
 
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             StepperFragment().apply {
                 arguments = Bundle().apply {
 
