@@ -18,9 +18,10 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.kpe.foodaway.scope.ScopedFragment
 import timber.log.Timber
 
-open class BaseFragment : Fragment() {
+open class BaseFragment : ScopedFragment() {
 
     private var alertDialog: SweetAlertDialog? = null
 

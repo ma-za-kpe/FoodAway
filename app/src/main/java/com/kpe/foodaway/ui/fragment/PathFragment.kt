@@ -1,21 +1,25 @@
 package com.kpe.foodaway.ui.fragment
 
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.kpe.foodaway.FoodStuff
 import com.kpe.foodaway.R
+import com.kpe.foodaway.base.BaseFragment
+import com.kpe.foodaway.data.local.ClientVendor
+import com.kpe.foodaway.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_path.*
+import kotlinx.coroutines.launch
 
 
-class PathFragment : Fragment() {
+class PathFragment : BaseFragment() {
 
     val prefManager = FoodStuff.instance!!.preferenceManager
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,15 +47,19 @@ class PathFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO: add room to check if is vendor or client or both
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         vendor.setOnClickListener {
-            prefManager.isVendor = true
+            launch {
+                viewModel.insert(ClientVendor("vendor","not-both"))
+            }
             findNavController().navigate(R.id.action_pathFragment_to_startFragment)
         }
 
         client.setOnClickListener {
-            prefManager.isClient = true
+            launch {
+                viewModel.insert(ClientVendor("client","not-both"))
+            }
             findNavController().navigate(R.id.action_pathFragment_to_mainActivity)
         }
 

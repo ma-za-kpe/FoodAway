@@ -40,23 +40,23 @@ class LoginFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (prefManager.isClient){
-            toast("VENDORRR")
-            //change color if vendor
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
-            login_login.setBackgroundColor(resources.getColor(R.color.purple_500))
-            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
-            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
-            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_500))
-        } else if (prefManager.isVendor){
-            toast("CLIENTTTT")
-            //change color if vendor
-            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
-            login_login.setBackgroundColor(resources.getColor(R.color.purple_700))
-            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
-            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
-            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_700))
-        }
+//        if (prefManager.isClient){
+//            toast("VENDORRR")
+//            //change color if vendor
+//            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_500)))
+//            login_login.setBackgroundColor(resources.getColor(R.color.purple_500))
+//            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
+//            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_500))
+//            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_500))
+//        } else if (prefManager.isVendor){
+//            toast("CLIENTTTT")
+//            //change color if vendor
+//            (activity as AppCompatActivity?)!!.supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.purple_700)))
+//            login_login.setBackgroundColor(resources.getColor(R.color.purple_700))
+//            log_in_fb.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
+//            log_in_google.strokeColor = ColorStateList.valueOf(resources.getColor(R.color.purple_700))
+//            bluebackground.setBackgroundColor(resources.getColor(R.color.purple_700))
+//        }
 
 
         //go to signup
