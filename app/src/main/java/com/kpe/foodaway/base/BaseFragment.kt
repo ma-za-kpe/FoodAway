@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -16,7 +17,6 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.kpe.foodaway.scope.ScopedFragment
 import timber.log.Timber
@@ -36,7 +36,7 @@ open class BaseFragment : ScopedFragment() {
         color: Int
     ) {
 
-        val spannableO = SpannableString(optional);
+        val spannableO = SpannableString(optional)
         spannableO.setSpan(
             ForegroundColorSpan(color),
             start, end,
@@ -96,7 +96,7 @@ open class BaseFragment : ScopedFragment() {
         alertDialog?.changeAlertType(SweetAlertDialog.ERROR_TYPE)
         alertDialog?.titleText = title
         alertDialog?.contentText = descriptions
-        Handler().postDelayed({ alertDialog?.dismiss() }, 5000)
+        Handler(Looper.getMainLooper()).postDelayed({ alertDialog?.dismiss() }, 5000)
         alertDialog?.setCancelable(true)
         alertDialog?.show()
 
@@ -112,7 +112,7 @@ open class BaseFragment : ScopedFragment() {
             alertDialog?.titleText = title
             alertDialog?.contentText = descriptions
             alertDialog?.show()
-            Handler().postDelayed({ alertDialog?.dismiss() }, 1000)
+            Handler(Looper.getMainLooper()).postDelayed({ alertDialog?.dismiss() }, 1000)
             alertDialog?.setCancelable(true)
 
 
