@@ -45,6 +45,10 @@ class SignUpFragment : Fragment() {
         signup_texts.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
         }
+
+        signup_signup.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_stepperFragment)
+        }
     }
 
     companion object {

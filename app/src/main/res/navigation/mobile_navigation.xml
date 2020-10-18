@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_stepperFragment"
+            app:destination="@id/stepperFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotFragment"
@@ -67,4 +70,9 @@
         android:name="com.kpe.foodaway.ui.activity.VendorActivity"
         android:label="VendorActivity"
         tools:layout="@layout/vendor_activity"/>
+    <fragment
+        android:id="@+id/stepperFragment"
+        android:name="com.kpe.foodaway.ui.fragment.StepperFragment"
+        android:label="fragment_stepper"
+        tools:layout="@layout/fragment_stepper" />
 </navigation>
