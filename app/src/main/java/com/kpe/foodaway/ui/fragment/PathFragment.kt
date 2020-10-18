@@ -43,6 +43,8 @@ class PathFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //TODO: add room to check if is vendor or client or both
+
         vendor.setOnClickListener {
             prefManager.isVendor = true
             findNavController().navigate(R.id.action_pathFragment_to_startFragment)
