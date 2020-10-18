@@ -14,7 +14,6 @@ import com.kpe.foodaway.util.ImplicitIntentsUtil.startActivityInApp
 class SplashActivity : AppCompatActivity() {
 
     val prefManager = FoodStuff.instance!!.preferenceManager
-    private lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,28 +21,28 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (prefManager.isFirstTimeLaunch) {
-                gotoWalkThrough(context, intent)
+                gotoWalkThrough(this, intent)
             } else {
                 if (prefManager.isClient){
-                    goToMainActivity(context, intent)
+                    goToMainActivity(this, intent)
                 } else if (prefManager.isVendor){
-                    goToVendorActivity(context, intent)
+                    goToVendorActivity(this, intent)
                 }
 
             }
         }, SPLASH_DISPLAY_LENGTH.toLong())
     }
 
-    private fun goToVendorActivity(context: Context, intent: Intent) {
-        startActivityInApp(this.context, intent)
+    private fun goToVendorActivity(splashActivity: SplashActivity, intent: Intent) {
+        startActivityInApp(splashActivity, intent)
     }
 
-    private fun gotoWalkThrough(context: Context, intent: Intent) {
-        startActivityInApp(this.context, intent)
+    private fun gotoWalkThrough(splashActivity: SplashActivity, intent: Intent) {
+        startActivityInApp(splashActivity, intent)
     }
 
-    private fun goToMainActivity(context: Context, intent: Intent) {
-        startActivityInApp(this.context, intent)
+    private fun goToMainActivity(splashActivity: SplashActivity, intent: Intent) {
+        startActivityInApp(splashActivity, intent)
     }
 
 }

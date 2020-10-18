@@ -36,6 +36,7 @@ object ImplicitIntentsUtil {
      * that the intent can be handled inside this app, and you care about shaving milliseconds.
      */
     fun startActivityInApp(context: Context, intent: Intent) {
+        val intent = Intent(this, DisplayMessageActivity::class.java)
         val packageName: String = context.getPackageName()
         intent.setPackage(packageName)
         context.startActivity(intent)
