@@ -4,21 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.kpe.foodaway.R
 import com.kpe.foodaway.base.BaseFragment
 import ernestoyaquello.com.verticalstepperform.VerticalStepperFormLayout
 import ernestoyaquello.com.verticalstepperform.interfaces.VerticalStepperForm
+import kotlinx.android.synthetic.main.address_step_layout.*
 import kotlinx.android.synthetic.main.fragment_stepper.*
+import kotlinx.android.synthetic.main.licence_step_layout.*
+import kotlinx.android.synthetic.main.tax_step_layout.*
 import timber.log.Timber
 
 
 class StepperFragment : BaseFragment(), VerticalStepperForm {
 
-    private lateinit var tax: EditText
-    private lateinit var address: EditText
-    private lateinit var license: EditText
+//    private var tax: EditText? = null
+//    private var address: EditText? = null
+//    private var license: EditText? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,23 +69,34 @@ class StepperFragment : BaseFragment(), VerticalStepperForm {
 
     private fun createTaxInfoStep(): View? {
         // Here we generate programmatically the view that will be added by the system to the step content layout
-        tax.isSingleLine = true
-        tax.hint = "Your tax info"
-        return tax
+        // In this case we generate the view by inflating a XML file
+
+        // In this case we generate the view by inflating a XML file
+        val inflater = LayoutInflater.from(requireContext())
+        val taxLayoutContent =
+            inflater.inflate(R.layout.tax_step_layout, null, false) as ConstraintLayout
+        tax?.hint = "Your tax info"
+        return taxLayoutContent
     }
 
     private fun createPhysicalAddressStep(): View? {
         // Here we generate programmatically the view that will be added by the system to the step content layout
-        address.isSingleLine = true
-        address.hint = "Your address info"
-        return address
+        // In this case we generate the view by inflating a XML file
+        val inflater = LayoutInflater.from(requireContext())
+        val addressLayoutContent =
+            inflater.inflate(R.layout.address_step_layout, null, false) as ConstraintLayout
+        address?.hint = "Your address info"
+        return addressLayoutContent
     }
 
     private fun createLinsenceToSellStep(): View? {
         // Here we generate programmatically the view that will be added by the system to the step content layout
-        license.isSingleLine = true
-        license.hint = "Your licence"
-        return license
+        // In this case we generate the view by inflating a XML file
+        val inflater = LayoutInflater.from(requireContext())
+        val licenceLayoutContent =
+            inflater.inflate(R.layout.licence_step_layout, null, false) as ConstraintLayout
+        licence?.hint = "Your licence"
+        return licenceLayoutContent
     }
 
     override fun onStepOpening(stepNumber: Int) {
@@ -97,45 +111,46 @@ class StepperFragment : BaseFragment(), VerticalStepperForm {
     }
 
     private fun checkPhysicalAddress() {
-        if (tax.length() in 3..40) {
+        if (address.editText?.text?.length in 3..40) {
             vertical_stepper_form.setActiveStepAsCompleted()
         } else {
             // This error message is optional (use null if you don't want to display an error message)
             val errorMessage = "Missing PhysicalAddress info, The name must have between 3 and 40 characters"
-            val dialog = showDialogue(errorMessage)
-            errorDialogue(alertDialog = dialog)
+//            val dialog = showDialogue(errorMessage)
+//            errorDialogue(alertDialog = dialog)
             vertical_stepper_form.setActiveStepAsUncompleted(errorMessage)
         }
     }
 
     private fun checkLinsenceToSell() {
-        if (tax.length() in 3..40) {
-            vertical_stepper_form.setActiveStepAsCompleted()
-        } else {
+        if (licence.editText?.text?.length == 0 ) {
             // This error message is optional (use null if you don't want to display an error message)
             val errorMessage = "Missing Licence info, The name must have between 3 and 40 characters"
-            val dialog = showDialogue(errorMessage)
-            errorDialogue(alertDialog = dialog)
+//            val dialog = showDialogue(errorMessage)
+//            errorDialogue(alertDialog = dialog)
             vertical_stepper_form.setActiveStepAsUncompleted(errorMessage)
         }
+
+        vertical_stepper_form.setActiveStepAsCompleted()
+
     }
 
     private fun checkTaxInfo() {
-        if (tax.length() in 3..40) {
+        if (tax.editText?.text?.length in 3..40) {
             vertical_stepper_form.setActiveStepAsCompleted()
         } else {
             // This error message is optional (use null if you don't want to display an error message)
             val errorMessage = "Missing tax info, The name must have between 3 and 40 characters"
-            val dialog = showDialogue(errorMessage)
-            errorDialogue(alertDialog = dialog)
+//            val dialog = showDialogue(errorMessage)
+//            errorDialogue(alertDialog = dialog)
             vertical_stepper_form.setActiveStepAsUncompleted(errorMessage)
         }
     }
 
     override fun sendData() {
-        Timber.d("data collected tax %s", tax.text)
-        Timber.d("data collected address %s", address.text)
-        Timber.d("data collected license %s", license.text)
+        Timber.d("data collected tax %s", tax.editText?.text)
+        Timber.d("data collected address %s", address.editText?.text)
+        Timber.d("data collected license %s", licence.editText?.text)
     }
 
     companion object {
