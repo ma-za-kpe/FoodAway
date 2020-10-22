@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.kpe.foodaway.R
-import com.kpe.foodaway.base.BaseFragment
+import com.kpe.foodaway.ui.base.BaseFragment
 import ernestoyaquello.com.verticalstepperform.VerticalStepperFormLayout
 import ernestoyaquello.com.verticalstepperform.interfaces.VerticalStepperForm
 import kotlinx.android.synthetic.main.address_step_layout.*

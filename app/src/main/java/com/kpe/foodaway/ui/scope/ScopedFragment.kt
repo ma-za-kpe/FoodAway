@@ -1,4 +1,4 @@
-package com.kpe.foodaway.scope
+package com.kpe.foodaway.ui.scope
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

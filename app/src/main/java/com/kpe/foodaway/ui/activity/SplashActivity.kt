@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.kpe.foodaway.FoodStuff
+import com.kpe.foodaway.KitengeApplication
 import com.kpe.foodaway.R
 import com.kpe.foodaway.util.launchActivity
 
 class SplashActivity : AppCompatActivity() {
 
-    val prefManager = FoodStuff.instance!!.preferenceManager
+    val prefManager = KitengeApplication.application.preferenceManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

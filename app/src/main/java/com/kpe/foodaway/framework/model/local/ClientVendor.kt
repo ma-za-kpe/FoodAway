@@ -1,4 +1,4 @@
-package com.kpe.foodaway.data.local
+package com.kpe.foodaway.framework.model.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

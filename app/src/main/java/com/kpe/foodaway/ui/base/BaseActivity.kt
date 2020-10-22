@@ -1,8 +1,7 @@
-package com.kpe.foodaway.base
+package com.kpe.foodaway.ui.base
 
 import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.text.Spannable
@@ -13,13 +12,12 @@ import android.view.WindowManager
 import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.kpe.foodaway.FoodStuff
+import com.kpe.foodaway.KitengeApplication
 import timber.log.Timber
 
 open class BaseActivity : AppCompatActivity() {
@@ -28,8 +26,7 @@ open class BaseActivity : AppCompatActivity() {
 
     private var alertDialog: SweetAlertDialog? = null
 
-    val preferenceManager = FoodStuff.instance!!.preferenceManager
-
+    val prefManager = KitengeApplication.application.preferenceManager
 
     //globally provides same view model instance
 //    val vm by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }

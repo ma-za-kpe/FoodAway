@@ -2,16 +2,25 @@ package com.kpe.foodaway
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.kpe.foodaway.framework.network.KitengeApiModule
 import com.kpe.foodaway.util.PreferenceManager
 import com.kpe.foodaway.util.ReleaseLogTree
 import com.kpe.foodaway.util.ThemeManager
 import timber.log.Timber
 
-class FoodStuff: Application() {
+class KitengeApplication: Application() {
+
+    lateinit var appComponent: AppComponent
+
+    private fun initAppComponent(app: KitengeApplication): AppComponent {
+        return DaggerAppComponent.builder()
+                .appModule(AppModule(app))
+                .kitengeApiModule(KitengeApiModule()).build()
+    }
+
     companion object {
-        // Singleton instance
-        // Getter to access Singleton instance
-        var instance: FoodStuff? = null
+        @get:Synchronized
+        lateinit var application: KitengeApplication
             private set
     }
 
@@ -27,7 +36,8 @@ class FoodStuff: Application() {
         initTheme()
 
         // Setup singleton instance
-        instance = this
+        application = this
+        appComponent = initAppComponent(this)
 
         //plant timber
         if (BuildConfig.DEBUG) {

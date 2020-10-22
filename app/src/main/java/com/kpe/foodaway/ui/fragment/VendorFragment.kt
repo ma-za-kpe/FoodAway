@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kpe.foodaway.R
-import com.kpe.foodaway.viewmodel.VendorViewModel
+import com.kpe.foodaway.ui.viewmodel.VendorViewModel
 
 class VendorFragment : Fragment() {
 

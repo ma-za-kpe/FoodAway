@@ -2,19 +2,17 @@ package com.kpe.foodaway.ui.activity
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.github.appintro.AppIntro
 import com.github.appintro.AppIntroFragment
 import com.github.appintro.AppIntroPageTransformerType
-import com.kpe.foodaway.FoodStuff
+import com.kpe.foodaway.KitengeApplication
 import com.kpe.foodaway.R
-import com.kpe.foodaway.base.BaseActivity
 
 class WalkThrough : AppIntro() {
 
-    val prefManager = FoodStuff.instance!!.preferenceManager
+    val prefManager = KitengeApplication.application.preferenceManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,4 +1,4 @@
-package com.kpe.foodaway.base
+package com.kpe.foodaway.ui.base
 
 import android.graphics.Color
 import android.graphics.drawable.Drawable
@@ -18,7 +18,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.kpe.foodaway.scope.ScopedFragment
+import com.kpe.foodaway.ui.scope.ScopedFragment
 import timber.log.Timber
 
 open class BaseFragment : ScopedFragment() {

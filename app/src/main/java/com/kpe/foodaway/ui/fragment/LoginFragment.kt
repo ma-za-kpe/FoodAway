@@ -1,28 +1,30 @@
 package com.kpe.foodaway.ui.fragment
 
-import android.content.res.ColorStateList
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.kpe.foodaway.FoodStuff
+import com.kpe.foodaway.KitengeApplication
+import com.kpe.foodaway.KitengeApplication.Companion.application
 import com.kpe.foodaway.R
-import com.kpe.foodaway.base.BaseFragment
-import com.kpe.foodaway.base.toast
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_login.email_address
+import com.kpe.foodaway.databinding.FragmentLoginBinding
+import com.kpe.foodaway.ui.base.BaseFragment
+import com.kpe.foodaway.ui.viewmodel.MainViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class LoginFragment : BaseFragment() {
 
-    val prefManager = FoodStuff.instance!!.preferenceManager
+    val prefManager = KitengeApplication.application.preferenceManager
+
+    private lateinit var mViewBinding: FragmentLoginBinding
+    private lateinit var viewModel: MainViewModel
+    @Inject
+     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +35,31 @@ class LoginFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        mViewBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_login, container, false)
+
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        application.appComponent.inject(this)
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(
+            MainViewModel::class.java)
+
+        mViewBinding.lifecycleOwner = this
+
+        mViewBinding.mainviewModel = viewModel
+
+        mViewBinding.loginLogin.setOnClickListener {
+            loginUser()
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return mViewBinding.root
+    }
+
+    private fun loginUser() {
+        launch {
+            viewModel.login()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,13 +85,13 @@ class LoginFragment : BaseFragment() {
 
 
         //go to signup
-        login_texts_orsingup.setOnClickListener {
+        mViewBinding.loginTextsOrsingup.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
         //hightlihging
         val optional = resources.getString(R.string.login_text);
-        hightlightText(optional, 22, 30, login_texts_orsingup, resources.getColor(R.color.purple_700))
+        hightlightText(optional, 22, 30,  mViewBinding.loginTextsOrsingup, resources.getColor(R.color.purple_700))
     }
 
     companion object {
